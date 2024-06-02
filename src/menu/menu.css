@@ -1,0 +1,18 @@
+/* Estilos para os itens do menu */
+ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+img {
+  margin-right: 10px;
+}
+
+span {
+  font-size: 20px;
+}

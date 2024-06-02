@@ -1,3 +1,5 @@
+import './menu.css'
+
 export default function createMenuPage() {
   const content = document.getElementById('content');
 
@@ -8,10 +10,25 @@ export default function createMenuPage() {
   paragraph.textContent = "Explore our delicious menu items crafted by our talented chefs.";
 
   const menuList = document.createElement('ul');
-  const items = ["Pizza", "Pasta", "Salad", "Desserts"];
+  const items = [
+    { name: "Pizza", image: "pizza.jpg" },
+    { name: "Pasta", image: "pasta.jpg" },
+    { name: "Salad", image: "salad.jpg" },
+    { name: "Desserts", image: "desserts.jpg" }
+  ];
   items.forEach(item => {
     const listItem = document.createElement('li');
-    listItem.textContent = item;
+
+    const itemImage = document.createElement('img');
+    itemImage.src = `./img/${item.image}`;
+    itemImage.alt = item.name;
+    itemImage.width = 200; // Defina a largura da imagem conforme necessário
+
+    const itemName = document.createElement('span');
+    itemName.textContent = item.name;
+
+    listItem.appendChild(itemImage);
+    listItem.appendChild(itemName);
     menuList.appendChild(listItem);
   });
 

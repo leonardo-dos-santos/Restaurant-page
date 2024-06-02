@@ -1,4 +1,5 @@
-import './styles.css';
+import './global-style.css'
+
 import createHomePage from './home/home';
 import createMenuPage from './menu/menu';
 import createContactPage from './contact/contact';
