@@ -1,7 +1,7 @@
 import './styles.css';
-import createHomePage from './home';
-import createMenuPage from './menu';
-import createContactPage from './contact';
+import createHomePage from './home/home';
+import createMenuPage from './menu/menu';
+import createContactPage from './contact/contact';
 
 function clearContent() {
   const content = document.getElementById('content');
