@@ -1,15 +1,20 @@
-function loadContact() {
+export default function createContactPage() {
   const content = document.getElementById('content');
-  content.textContent = ''; // Clear previous content
 
-  const headline = document.createElement('h1');
-  headline.textContent = "Contact Us";
+  const heading = document.createElement('h1');
+  heading.textContent = "Contact Us";
 
-  const contactInfo = document.createElement('p');
-  contactInfo.textContent = "Email: contact@restaurant.com\nPhone: 123-456-7890";
+  const paragraph = document.createElement('p');
+  paragraph.textContent = "We would love to hear from you. Contact us at the following address or phone number.";
 
-  content.appendChild(headline);
-  content.appendChild(contactInfo);
+  const address = document.createElement('p');
+  address.textContent = "123 Food Street, Culinary City, Yumland";
+
+  const phone = document.createElement('p');
+  phone.textContent = "(123) 456-7890";
+
+  content.appendChild(heading);
+  content.appendChild(paragraph);
+  content.appendChild(address);
+  content.appendChild(phone);
 }
-
-export default loadContact;

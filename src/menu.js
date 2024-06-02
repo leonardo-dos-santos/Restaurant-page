@@ -1,20 +1,21 @@
-function loadMenu() {
+export default function createMenuPage() {
   const content = document.getElementById('content');
-  content.textContent = ''; // Clear previous content
 
-  const headline = document.createElement('h1');
-  headline.textContent = "Our Menu";
+  const heading = document.createElement('h1');
+  heading.textContent = "Our Menu";
+
+  const paragraph = document.createElement('p');
+  paragraph.textContent = "Explore our delicious menu items crafted by our talented chefs.";
 
   const menuList = document.createElement('ul');
-  const items = ['Pizza', 'Pasta', 'Salad'];
+  const items = ["Pizza", "Pasta", "Salad", "Desserts"];
   items.forEach(item => {
-      const listItem = document.createElement('li');
-      listItem.textContent = item;
-      menuList.appendChild(listItem);
+    const listItem = document.createElement('li');
+    listItem.textContent = item;
+    menuList.appendChild(listItem);
   });
 
-  content.appendChild(headline);
+  content.appendChild(heading);
+  content.appendChild(paragraph);
   content.appendChild(menuList);
 }
-
-export default loadMenu;

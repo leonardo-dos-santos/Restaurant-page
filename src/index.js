@@ -1,17 +1,43 @@
-import loadHome from './home';
-import loadMenu from './menu';
-import loadContact from './contact';
+import './styles.css';
+import createHomePage from './home';
+import createMenuPage from './menu';
+import createContactPage from './contact';
 
-function init() {
-  loadHome(); // Load home by default
-
-  const homeButton = document.querySelector('button:nth-child(1)');
-  const menuButton = document.querySelector('button:nth-child(2)');
-  const contactButton = document.querySelector('button:nth-child(3)');
-
-  homeButton.addEventListener('click', loadHome);
-  menuButton.addEventListener('click', loadMenu);
-  contactButton.addEventListener('click',loadContact);
+function clearContent() {
+  const content = document.getElementById('content');
+  content.innerHTML = '';
 }
 
-document.addEventListener('DOMContentLoaded', init);
+function setActiveButton(buttonId) {
+  const buttons = document.querySelectorAll('nav button');
+  buttons.forEach(button => {
+    if (button.id === buttonId) {
+      button.classList.add('active');
+    } else {
+      button.classList.remove('active');
+    }
+  });
+}
+
+document.getElementById('home-btn').addEventListener('click', () => {
+  clearContent();
+  createHomePage();
+  setActiveButton('home-btn');
+});
+
+document.getElementById('menu-btn').addEventListener('click', () => {
+  clearContent();
+  createMenuPage();
+  setActiveButton('menu-btn');
+});
+
+document.getElementById('contact-btn').addEventListener('click', () => {
+  clearContent();
+  createContactPage();
+  setActiveButton('contact-btn');
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  createHomePage();
+  setActiveButton('home-btn');
+});
